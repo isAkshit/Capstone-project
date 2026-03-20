@@ -4,7 +4,7 @@
 
 #main_div1{
     height: 900px;
-    background-image: url("bg_img2.jpg");
+    background-image: url("/images/bg_img2.jpg");
     background-size: cover;
     
 }
