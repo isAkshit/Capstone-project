@@ -1,10 +1,195 @@
+body{
+    margin: 0px 0px 0px 0px;
+}
+*{
+    padding:0px;
+    border: 1 solid black;
+}
 #nav{
-    height: 100px;
+    height: 64px;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0px;
+    opacity: 80%;
+    background-image: linear-gradient(transparent 10%);
+    background-color: rgb(0, 0, 0);
+    position:fixed;
+    align-items: center;
+}
+#logo{
+    height:auto;
+    width: clamp(6rem,10vw,11rem);
+    margin: 0px,clamp(2rem,7vh,5rem),0px,0px;
 }
 
-#main_div1{
-    height: 900px;
+#club1{
+    width:25em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: clamp(1rem,2vh,3rem);
+    margin-right: clamp(1rem,2vh,3rem);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px,2vw,24px);
+    color:aliceblue;
+}
+#item1:hover,#item2:hover,#item3:hover,#item4:hover{
+    color:rgb(255, 255, 0);
+    text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #8a2cff,
+        0 0 30px #8a2cff,
+        0 0 50px #00d4ff;
+
+}
+
+#main_div_img{
+    height: clamp(22rem,80vw,60rem);
+    left:0px;
+    right:0px;
+    width:100vw;
     background-image: url("/images/bg_img2.jpg");
+    background-position: center;
     background-size: cover;
     
+}
+#mix{
+    height: clamp(22rem,80vw,60rem);
+    width:100vw;
+    background-image:linear-gradient(to bottom, transparent 65%, black);
+    margin-top: 10px;
+}
+#top_space{
+    height:56px;
+    width:100%;
+    top:0px;
+    background-color: black;
+}
+ #sign{
+    width:clamp(4rem,6vw,13rem);
+    display:flex;
+    flex-direction: row;
+    margin-right: clamp(0.5rem,2vw,3rem);
+}
+
+#sign_button{
+    height:clamp(0.5rem,4vh,9rem);
+    width:clamp(4rem,7vw,6rem);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    position: relative;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 0;
+}
+
+#sign_button::after, #sign_button::before{
+    height:100%;
+    width:100%;
+    top: 50%;
+    left:50%;
+    translate: -50% -50%;
+    content:'';
+    padding:5px;
+    background-image: linear-gradient(90deg, rgb(0, 0, 255) 35%, rgba(0, 212, 255, 1) 100%);
+    position:absolute;
+    z-index: -1;
+    border-radius: 5px;
+}
+#sign_button:hover{
+    color:white;
+    z-index: 1;
+    box-shadow: 40px 0 100px cyan, -40px 0 100px cyan;
+}
+#sign_button::before{
+    filter:blur(1.25rem);
+}
+#main_div_content{
+    height: clamp(22rem,80vw,60rem);
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    
+}
+#main_h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: clamp(1.75rem,5vw,8rem);
+    height:clamp(7rem,15vw,20rem);
+    margin-top:clamp(0.3rem,4vh,50rem);
+    text-align: center;
+}
+#main_h2{
+    font-family:cursive;
+    font-size: clamp(0.60rem,2vw,2rem);
+    height:fit-content;
+    text-align: center;
+    margin-top: clamp(0.05rem,0.5vh,1rem);
+    margin-bottom: clamp(0.05rem,1vh,3rem);
+    color:aqua;
+}
+#main_h3{
+    font-family:cursive;
+    font-size: clamp(0.60rem,2vw,2rem);
+    height:20px;
+    color: rgb(108, 235, 255);
+    text-align: center;
+}
+#main_div2{
+    height:1000px;
+    width:100%;
+    background-image:linear-gradient(to bottom, #000000 1%, #0A2540);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#id1{
+   height:clamp(1rem,2vh,4rem);
+   width: 100%;
+   display:flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+#st_journey,#testimonies{
+    border-radius: clamp(10px,2vh,25px);
+    height:clamp(1.5rem,5vh,5rem);
+    width:clamp(8rem,12vw,15rem);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: clamp(0.85rem,2vh,3rem);
+    border: 0;
+}
+#st_journey{
+    background-color: #55a6dc;
+    margin-right: clamp(5px,5vw,100px);
+}
+#testimonies{
+    background-color: #3165aa;
+    margin-left: clamp(5px,5vw,100px);
+}
+#st_journey:hover,#testimonies:hover{
+    background-color: #2ba8c1;
+    border:1px transparent;
+}
+#st_journey::after, #testimonies::before{
+    height:100%;
+    width:100%;
+    top: 50%;
+    left:50%;
+    translate: -50% -50%;
+    content:'';
+    background-image: linear-gradient(90deg, rgb(0, 0, 255) 35%, rgba(0, 212, 255, 1) 100%);
+    position:absolute;
+    z-index: -1;
+    border-radius: 5px;
+}
+#st_journey:hover,#testimonies:hover{
+    color:white;
+    box-shadow: 40px 0 100px cyan, -40px 0 100px cyan;
 }
