@@ -3,10 +3,9 @@ body{
 }
 *{
     padding:0px;
-    border: 1 solid black;
 }
 #nav{
-    height: 64px;
+    height: clamp(3rem,3.25vw,4rem);
     width:100%;
     display:flex;
     flex-direction: row;
@@ -37,7 +36,7 @@ body{
     color:aliceblue;
 }
 #item1:hover,#item2:hover,#item3:hover,#item4:hover{
-    color:rgb(255, 255, 0);
+    color:rgb(0, 255, 251);
     text-shadow: 
         0 0 10px #fff,
         0 0 20px #8a2cff,
@@ -50,7 +49,7 @@ body{
     height: clamp(22rem,80vw,60rem);
     left:0px;
     right:0px;
-    width:100vw;
+    width:100%;
     background-image: url("/images/bg_img2.jpg");
     background-position: center;
     background-size: cover;
@@ -58,7 +57,7 @@ body{
 }
 #mix{
     height: clamp(22rem,80vw,60rem);
-    width:100vw;
+    width:100%;
     background-image:linear-gradient(to bottom, transparent 65%, black);
     margin-top: 10px;
 }
@@ -68,7 +67,50 @@ body{
     top:0px;
     background-color: black;
 }
- #sign{
+ 
+#main_div_content{
+    height: clamp(22rem,80vw,60rem);
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    
+}
+#main_h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: clamp(1.75rem,5vw,8rem);
+    height:clamp(7rem,15vw,20rem);
+    margin-top:clamp(0.3rem,4vh,50rem);
+    text-align: center;
+}
+#main_h2{
+    font-family:cursive;
+    font-size: clamp(0.60rem,2vw,2rem);
+    height:fit-content;
+    text-align: center;
+    margin-top: clamp(0.05rem,0.5vh,1rem);
+    margin-bottom: clamp(0.05rem,1vh,3rem);
+    color:aqua;
+}
+#main_h3{
+    font-family:cursive;
+    font-size: clamp(0.60rem,2vw,2rem);
+    height:20px;
+    color: rgb(108, 235, 255);
+    text-align: center;
+}
+#main_div2{
+    height:fit-content;
+    width:100%;
+    background-image:linear-gradient(to bottom, #000000 1%, #000000);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#sign{
     width:clamp(4rem,6vw,13rem);
     display:flex;
     flex-direction: row;
@@ -108,49 +150,9 @@ body{
 #sign_button::before{
     filter:blur(1.25rem);
 }
-#main_div_content{
-    height: clamp(22rem,80vw,60rem);
-    width:100%;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    
-}
-#main_h1{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
-    font-size: clamp(1.75rem,5vw,8rem);
-    height:clamp(7rem,15vw,20rem);
-    margin-top:clamp(0.3rem,4vh,50rem);
-    text-align: center;
-}
-#main_h2{
-    font-family:cursive;
-    font-size: clamp(0.60rem,2vw,2rem);
-    height:fit-content;
-    text-align: center;
-    margin-top: clamp(0.05rem,0.5vh,1rem);
-    margin-bottom: clamp(0.05rem,1vh,3rem);
-    color:aqua;
-}
-#main_h3{
-    font-family:cursive;
-    font-size: clamp(0.60rem,2vw,2rem);
-    height:20px;
-    color: rgb(108, 235, 255);
-    text-align: center;
-}
-#main_div2{
-    height:1000px;
-    width:100%;
-    background-image:linear-gradient(to bottom, #000000 1%, #0A2540);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+
 #id1{
-   height:clamp(1rem,2vh,4rem);
+   height:clamp(1.5rem,5vh,5rem);
    width: 100%;
    display:flex;
    flex-direction: row;
@@ -162,34 +164,84 @@ body{
     height:clamp(1.5rem,5vh,5rem);
     width:clamp(8rem,12vw,15rem);
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: clamp(0.85rem,2vh,3rem);
+    background-color: transparent;
+    color: white;
+    font-size: clamp(14px,1vw,24px);
     border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
 }
 #st_journey{
-    background-color: #55a6dc;
+    color: white;
     margin-right: clamp(5px,5vw,100px);
+    background-color: transparent;
 }
 #testimonies{
-    background-color: #3165aa;
+    color: white;
     margin-left: clamp(5px,5vw,100px);
 }
 #st_journey:hover,#testimonies:hover{
     background-color: #2ba8c1;
     border:1px transparent;
 }
-#st_journey::after, #testimonies::before{
+#st_journey::after,#st_journey::before,#testimonies::after , #testimonies::before{
     height:100%;
     width:100%;
     top: 50%;
     left:50%;
     translate: -50% -50%;
     content:'';
+    padding:5px;
     background-image: linear-gradient(90deg, rgb(0, 0, 255) 35%, rgba(0, 212, 255, 1) 100%);
     position:absolute;
-    z-index: -1;
     border-radius: 5px;
+}
+#st_journey::before, #testimonies::before{
+    filter:blur(1.2rem);
 }
 #st_journey:hover,#testimonies:hover{
     color:white;
+    z-index: 1;
     box-shadow: 40px 0 100px cyan, -40px 0 100px cyan;
+}
+#id2{
+    
+    height:fit-content;
+    margin: clamp(5px,8vw,200px);
+    background-color: #211951;
+}
+#h1{
+    color:white;
+    font-size: clamp(4rem,6vw,10rem);
+    margin:15px;
+    font-size:clamp(20px,6vw,5rem);
+}
+#id4{
+    height:fit-content;
+    display:flex;
+    flex-direction: row;
+    background-color: #282197ab;
+    justify-content: center;
+    margin: clamp(5px,5vw,100px);
+    border-radius: 10px;
+    align-items: center;
+}
+@media (max-width : 1200px){
+    #id4{
+        flex-wrap: wrap;
+    }
+}
+#img1{
+    height:clamp(100px,30vw,350px);
+    border-radius: 10px;
+    margin: 10px;
+    
+}
+#id5{
+    margin: clamp(5px,5vw,100px);
+    color: white;
+    font-size: clamp(8px,3vw,24px);
 }
