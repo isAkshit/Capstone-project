@@ -399,12 +399,12 @@ body{
 #p009,#p010,#p011{
     margin: clamp(5px,1vw,20px);
     font-size: clamp(4px,2vw,20px);
-    color: rgb(172, 172, 172);
+    color: white;
 }
 #id12,#id13,#id14{
     text-align: left;
     margin: clamp(5px,2vw,50px);
-    color: white;
+    color: rgb(172, 172, 172);
     font-size: clamp(6px,2vw,20px);
 }
 #id11{
