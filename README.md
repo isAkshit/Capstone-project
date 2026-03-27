@@ -1,4 +1,4 @@
-# LibraPlat 📚
+# CircuLib 📚
 A Library Management Platform designed to simplify book tracking, requests, and borrowing for students and librarians.
 This project is being developed as a capstone project.
 
