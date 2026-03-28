@@ -21,7 +21,7 @@ body{
 #logo{
     height:auto;
     width: clamp(6rem,10vw,11rem);
-    margin: 0px,clamp(2rem,7vh,5rem),0px,0px;
+    margin: 0px clamp(2rem,7vh,5rem) 0px 0px;
 }
 
 #club1{
