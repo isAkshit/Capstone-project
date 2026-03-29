@@ -1,8 +1,12 @@
 body{
     margin: 0px 0px 0px 0px;
+    background-color: #000; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 *{
-    padding:0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 #nav{
     height: clamp(3rem,3.25vw,4rem);
@@ -20,10 +24,12 @@ body{
 }
 #logo{
     height:auto;
-    width: clamp(6rem,10vw,11rem);
-    margin: 0px clamp(2rem,7vh,5rem) 0px 0px;
+    width: clamp(70px,10vw,135px);
+    border-radius: 10px;
 }
-
+#logo_div{
+    background-image: transparent;
+}
 #club1{
     width:25em;
     display: flex;
@@ -112,7 +118,7 @@ body{
     justify-content: space-between;
 }
 #sign{
-    width:clamp(4rem,6vw,13rem);
+    width:clamp(3rem,6vw,13rem);
     display:flex;
     flex-direction: row;
     margin-right: clamp(0.5rem,2vw,3rem);
@@ -426,16 +432,7 @@ body{
     border-radius: 20px;
     background-color: #282197ab;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    background-color: #000; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
 .main-footer {
     background-color: #0c0e1a; 
