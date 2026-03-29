@@ -1,13 +1,8 @@
 body{
     margin: 0px 0px 0px 0px;
     background-color: #000; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 #nav{
     height: clamp(3rem,3.25vw,4rem);
     width:100%;
