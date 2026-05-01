@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CircuLib - Login & Signup</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="auth-wrapper">
+        <div class="header-section">
+            <img src="/images/final_logo3.jpg" alt="CircuLib Logo" class="logo">
+            <h1 id="page-title" class="cyan-text">Welcome Back</h1>
+            <p id="page-subtitle">Sign in to your CircuLib account</p>
+        </div>
+
+        <!-- ================= SIGN IN SECTION ================= -->
+        <div id="sign-in-section">
+            
+            <div class="promo-card">
+                <h3>New to CircuLib?</h3>
+                <p>Create your account and start borrowing books today.</p>
+                <button type="button" id="go-to-signup" class="outline-btn">Create an Account</button>
+            </div>
+
+            <div class="divider">
+                <span>Already a user?</span>
+            </div>
+
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-email">EMAIL ADDRESS</label>
+                    <input type="email" id="login-email" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="login-password">PASSWORD</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="form-footer">
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="primary-btn">Sign In</button>
+            </form>
+        </div>
+
+        <!-- ================= SIGN UP SECTION ================= -->
+        <div id="sign-up-section" class="hidden">
+            
+            <!-- Role Selection moved here -->
+            <div class="role-selection">
+                <span class="section-label">REGISTER AS</span>
+                <div class="cards-container">
+                    <div class="role-card active" data-role="admin">
+                        <div class="icon">🛡️</div>
+                        <h3>Admin</h3>
+                        <p>Manage library & members</p>
+                    </div>
+                    <div class="role-card" data-role="member">
+                        <div class="icon">🎓</div>
+                        <h3>Member</h3>
+                        <p>Browse & borrow books</p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="register-form">
+                <div class="input-group">
+                    <label for="signup-name">FULL NAME</label>
+                    <input type="text" id="signup-name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="signup-phone">PHONE NUMBER</label>
+                    <input type="tel" id="signup-phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="signup-email">EMAIL ADDRESS</label>
+                    <input type="email" id="signup-email" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="signup-password">PASSWORD</label>
+                    <input type="password" id="signup-password" placeholder="Create a password" required>
+                </div>
+                
+                <button type="submit" class="primary-btn">Sign Up</button>
+
+                <div class="switch-form-text">
+                    Already have an account? <a href="#" id="go-to-signin" class="cyan-text">Sign In</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

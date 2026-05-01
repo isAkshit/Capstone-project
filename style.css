@@ -1,7 +1,9 @@
 body{
     margin: 0px 0px 0px 0px;
     background-color: #000; 
+    background-color: #000; 
 }
+
 
 #nav{
     height: clamp(3rem,3.25vw,4rem);
@@ -21,6 +23,11 @@ body{
     height:auto;
     width: clamp(70px,10vw,135px);
     border-radius: 10px;
+    width: clamp(70px,10vw,135px);
+    border-radius: 10px;
+}
+#logo_div{
+    background-image: transparent;
 }
 #logo_div{
     background-image: transparent;
@@ -114,6 +121,7 @@ body{
 }
 #sign{
     width:clamp(3rem,6vw,13rem);
+    width:clamp(3rem,6vw,13rem);
     display:flex;
     flex-direction: row;
     margin-right: clamp(0.5rem,2vw,3rem);
@@ -152,6 +160,9 @@ body{
 }
 #sign_button::before{
     filter:blur(1.25rem);
+}
+#log_link{
+    text-decoration: none;
 }
 #id1{
    height:clamp(1.5rem,5vh,5rem);

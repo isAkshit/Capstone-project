@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #030712; /* Dark background */
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-wrapper {
+    background-color: #000000; /* Pure black container */
+    width: 100%;
+    max-width: 480px;
+    padding: 40px 30px;
+    border-radius: 12px;
+}
+
+/* Header Section */
+.header-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.cyan-text {
+    color: #00e5ff; /* Direct Cyan Color */
+}
+
+.header-section h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.header-section p {
+    color: #9ca3af; /* Muted gray text */
+    font-size: 14px;
+}
+
+/* Role Selection Cards */
+.role-selection {
+    margin-bottom: 25px;
+}
+
+.section-label {
+    display: block;
+    color: #9ca3af;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 15px;
+}
+
+.role-card {
+    flex: 1;
+    background-color: #0b1120;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    padding: 20px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.role-card.active {
+    border-color: #00e5ff; /* Neon Cyan Border */
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.15); /* Soft cyan glow */
+}
+
+.role-card .icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.role-card h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.role-card p {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Promo Box (The "New to CircuLib" card) */
+.promo-card {
+    background-color: #04101a;
+    border: 1px solid #0d2838;
+    border-radius: 10px;
+    padding: 25px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.promo-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.promo-card p {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 15px;
+}
+
+.outline-btn {
+    background: transparent;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.outline-btn:hover {
+    background: rgba(0, 229, 255, 0.1);
+}
+
+/* "Already a user?" Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #1f2937;
+}
+
+.divider span {
+    padding: 0 15px;
+}
+
+/* Form Inputs */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #9ca3af;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    background-color: #09090b;
+    border: 1px solid #1f2937;
+    color: #ffffff;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #00e5ff; /* Highlight input on click */
+}
+
+/* Links & Buttons */
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.forgot-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.primary-btn {
+    width: 100%;
+    background-color: #00e5ff; /* Solid Cyan button */
+    color: #000000;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.primary-btn:hover {
+    background-color: #00d4eb;
+}
+
+/* Hide/Show Logic */
+.hidden {
+    display: none !important;
+}
+
+.switch-form-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.switch-form-text a {
+    text-decoration: none;
+    font-weight: 600;
+}
