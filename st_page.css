@@ -1,0 +1,74 @@
+body {
+    background-color: #0b0e14;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.header {
+    background-color: #111827;
+    padding: 10px 40px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo thoda aur bada kiya hai (40px se 60px) */
+.main-logo {
+    height: 60px; 
+    margin-right: 25px;
+}
+
+.dash-text { margin-right: 30px; font-weight: bold; font-size: 18px; }
+
+.search-box { 
+    padding: 10px; width: 350px; 
+    border-radius: 5px; border: none; 
+    background: #1f2937; color: white; 
+}
+
+.right-menu {
+    margin-left: auto; 
+    display: flex;
+    align-items: center;
+}
+
+.bell { font-size: 22px; margin-right: 25px; position: relative; }
+.badge { background: red; font-size: 10px; padding: 2px 5px; border-radius: 50%; position: absolute; top: -5px; right: -8px; }
+.avatar { background: #4f46e5; padding: 10px; border-radius: 50%; margin-right: 12px; font-weight: bold; }
+.user-info { font-size: 13px; line-height: 1.2; }
+
+.container { padding: 30px; }
+
+.alert-red {
+    background: #450a0a; border: 1px solid red;
+    padding: 15px; border-radius: 8px; margin-bottom: 30px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.view-btn { background: red; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+
+.content-row { display: flex; gap: 30px; }
+.left-side { width: 75%; }
+.right-side { width: 25%; }
+
+.book {
+    background: #161b22; width: 170px; 
+    display: inline-block; margin: 0 15px 20px 0; 
+    border-radius: 8px; overflow: hidden; border: 1px solid #333;
+    vertical-align: top;
+}
+.book img { width: 100%; height: 210px; object-fit: cover; }
+.details { padding: 12px; font-size: 12px; }
+.details b { display: block; margin-bottom: 8px; font-size: 14px; }
+
+.red-text { color: #f87171; font-weight: bold; }
+.green-text { color: #4ade80; font-weight: bold; }
+.fine { color: #fbbf24; font-size: 11px; }
+
+.fine-box {
+    background: #161b22; padding: 25px; 
+    border-radius: 12px; text-align: center; border: 1px solid #333;
+}
+.price { color: #f87171; font-size: 45px; margin: 15px 0; }
+.pay-btn { background: #2563eb; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
