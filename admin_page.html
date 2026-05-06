@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CircuLib - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin_page.css">
+</head>
+
+
+<body>
+    <div id="id1">
+        
+        <div id="id2">
+            <div id="logo_div">
+                <img id="logo" src="/images/final_logo3.jpg">
+            </div>
+
+            <div id="id3">
+                <h2 id="heading001">
+                    Welcome back, 
+                    <span id="highlight" id="admin_name">Admin!</span> 👋
+                </h2>
+
+                <p id="p001">
+                    Here's what's happening in your library today.
+                </p>
+            </div>
+
+            <div id="id4">
+                <input 
+                    type="text" 
+                    placeholder="Search books, members..." 
+                    id="search_bar"
+                >
+
+                <button id="notif_btn">🔔</button>
+
+                <div id="id5">
+                    <img 
+                        id="user_img" 
+                        src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff"
+                    >
+
+                    <div id="user_text">
+                        <p id="u_name">Admin</p>
+                        <p id="u_role">Library Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KPI SECTION -->
+
+        <div id="id6">
+
+            <div id="box1">
+                <div id="icon1">📚</div>
+
+                <div id="info1">
+                    <p id="p002">Total Books</p>
+
+                    <!-- JS WILL UPDATE -->
+                    <h3 id="h_kpi1">0</h3>
+                </div>
+            </div>
+
+            <div id="box2">
+                <div id="icon2">👥</div>
+
+                <div id="info2">
+                    <p id="p003">Active Members</p>
+
+                    <!-- JS WILL UPDATE -->
+                    <h3 id="h_kpi2">0</h3>
+                </div>
+            </div>
+
+            <div id="box3">
+                <div id="icon3">📋</div>
+
+                <div id="info3">
+                    <p id="p004">Pending Requests</p>
+
+                    <!-- JS WILL UPDATE -->
+                    <h3 id="h_kpi3">0</h3>
+                </div>
+            </div>
+
+            <div id="box4">
+                <div id="icon4">⏰</div>
+
+                <div id="info4">
+                    <p id="p005">Overdue Count</p>
+
+                    <!-- JS WILL UPDATE -->
+                    <h3 id="h_kpi4">0</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TABLE SECTION -->
+
+        <div id="id7">
+
+            <!-- BOOK MANAGEMENT -->
+
+            <div id="box5">
+
+                <div id="head_box5">
+                    <h3 id="h_panel1">Book Management</h3>
+                </div>
+
+                <table id="table1">
+
+                    <thead>
+                        <tr>
+                            <th>Book Title</th>
+                            <th>Category</th>
+                            <th>Total Stock</th>
+                            <th>Available</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <!-- JS WILL RENDER HERE -->
+                    <tbody id="bookTable"></tbody>
+
+                </table>
+
+            </div>
+
+            <!-- REQUEST TABLE -->
+
+            <div id="box6">
+
+                <div id="head_box6">
+                    <h3 id="h_panel2">Borrow Requests</h3>
+                </div>
+
+                <table id="table2">
+
+                    <thead>
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Book Requested</th>
+                            <th>Duration</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <!-- JS WILL RENDER HERE -->
+                    <tbody id="requestTable"></tbody>
+
+                </table>
+
+            </div>
+
+            <!-- MEMBER MANAGEMENT -->
+
+            <div id="box7">
+
+                <div id="head_box7">
+                    <h3 id="h_panel3">Member Management</h3>
+                </div>
+
+                <!-- JS LATER -->
+                <div id="member_container">
+
+                </div>
+
+            </div>
+
+            <!-- FINE MANAGEMENT -->
+
+            <div id="box8">
+
+                <div id="head_box8">
+                    <h3 id="h_panel4">Fine Management</h3>
+                </div>
+
+                <!-- JS LATER -->
+                <div id="fine_container">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="id8">
+
+        </div>
+
+    </div>
+
+    <script src="admin_page.js"></script>
+
+</body>
+</html>
