@@ -29,62 +29,115 @@
             <button class="view-btn">View Active Borrows</button>
         </div>
 
+    <div class="container">
+        <div class="alert-red">
+            <span>⚠️ Due Date Reminder! You have 2 item(s) due within 3 days.</span>
+            <button class="view-btn">View Active Borrows</button>
+        </div>
+
         <div class="content-row">
-            <div class="left-side">
-                <h3>My Active Borrows</h3>
-                
-                <!-- Book 1 -->
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/7108sdE9u+L.jpg">
-                    <div class="details">
-                        <b>The Hobbit</b>
-                        <p class="red-text">Due: 2 Days</p>
-                        <p class="fine">Fine: ₹10/day</p>
-                    </div>
-                </div>
+    <div class="left-side">
+        <h3>My Active Borrows</h3>
 
-                <!-- Book 2 -->
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/71kxa1-0mfL.jpg">
-                    <div class="details">
-                        <b>1984</b>
-                        <p class="red-text">Due: 5 Days</p>
-                        <p class="fine">Fine: ₹10/day</p>
-                    </div>
-                </div>
+        <!-- JS will add books here later -->
+        <div id="books-container">
 
-                <!-- Book 3 (New) -->
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/81Pz-0oX9XL.jpg">
-                    <div class="details">
-                        <b>A Brief History</b>
-                        <p class="green-text">Due: 8 Days</p>
-                        <p class="fine">Fine: ₹10/day</p>
-                    </div>
-                </div>
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/I/7108sdE9u+L.jpg">
 
-                <!-- Book 4 (New) -->
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/810u9MFEK8L.jpg">
-                    <div class="details">
-                        <b>The Alchemist</b>
-                        <p class="green-text">Due: 12 Days</p>
-                        <p class="fine">Fine: ₹10/day</p>
-                    </div>
+                <div class="details">
+                    <b class="book-title">The Hobbit</b>
+
+                    <p class="due-text red-text">
+                        Due: 2 Days
+                    </p>
+
+                    <p class="fine">
+                        Fine: ₹10/day
+                    </p>
                 </div>
             </div>
 
-            <div class="right-side">
-                <div class="fine-box">
-                    <h3>Fine Tracker</h3>
-                    <p>Total Amount Due</p>
-                    <h1 class="price">$12.50</h1>
-                    <button class="pay-btn">Pay Now</button>
-                    <p style="margin-top:15px"><a href="#" style="color:#3b82f6; text-decoration:none; font-size:12px;">View History</a></p>
+
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/I/71kxa1-0mfL.jpg">
+
+                <div class="details">
+                    <b class="book-title">1984</b>
+
+                    <p class="due-text red-text">
+                        Due: 5 Days
+                    </p>
+
+                    <p class="fine">
+                        Fine: ₹10/day
+                    </p>
                 </div>
             </div>
+
+
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/I/81Pz-0oX9XL.jpg">
+
+                <div class="details">
+                    <b class="book-title">A Brief History</b>
+
+                    <p class="due-text green-text">
+                        Due: 8 Days
+                    </p>
+
+                    <p class="fine">
+                        Fine: ₹10/day
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/I/810u9MFEK8L.jpg">
+
+                <div class="details">
+                    <b class="book-title">The Alchemist</b>
+
+                    <p class="due-text green-text">
+                        Due: 12 Days
+                    </p>
+
+                    <p class="fine">
+                        Fine: ₹10/day
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <div class="right-side">
+
+        <div class="fine-box">
+            <h3>Fine Tracker</h3>
+
+            <p>Total Amount Due</p>
+
+            <!-- JS can update later -->
+            <h1 class="price" id="total-fine">
+                $12.50
+            </h1>
+
+            <button class="pay-btn">
+                Pay Now
+            </button>
+
+            <p style="margin-top:15px">
+                <a href="#" style="color:#3b82f6; text-decoration:none; font-size:12px;">
+                    View History
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+</div>
 <script src="st_page.js"></script>
 </body>
 </html>
