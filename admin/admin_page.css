@@ -1,7 +1,6 @@
 body{
     margin: 0px 0px 0px 0px;
-    background-color: #000;
-    background-image:url("/images/bg_img2.jpg");
+    background-image:url("/images/bg_img2.png");
     color: #e2e8f0;
     min-height: 100vh;
 }
@@ -23,10 +22,12 @@ button {
 }
 
 #id2 { 
+    height:50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: black;
     margin-bottom: clamp(15px, 4vw, 30px);
     padding-left: clamp(15px, 4vw, 30px);;
 }
@@ -64,58 +65,17 @@ button {
     margin-right: clamp(5px, 1vw, 16px);
 }
 
-#notif_btn {
-    height: clamp(2rem, 4vw, 2.5rem);
-    width: clamp(2rem, 4vw, 2.5rem);
-    border-radius: 5px;
-    background-color: transparent;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    position: relative;
-    margin-right: clamp(5px, 1vw, 16px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-#notif_btn::after, #notif_btn::before {
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    content: '';
-    padding: 2px;
-    background-image: linear-gradient(90deg, rgb(0, 0, 255) 35%, rgba(0, 212, 255, 1) 100%);
-    position: absolute;
-    z-index: -1;
-    border-radius: 5px;
-}
-
-#notif_btn:hover {
-    color: white;
-    box-shadow: 15px 0 40px cyan, -15px 0 40px cyan;
-}
-
-#notif_btn::before { filter: blur(0.5rem); }
 
 #id5 { 
     display: flex;
     align-items: center;
     background: #1e293b;
     padding: 6px 16px 6px 6px;
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
-#user_img {
-    width: clamp(25px, 4vw, 36px);
-    height: clamp(25px, 4vw, 36px);
-    border-radius: 50%;
-    margin-right: 8px;
-}
 
 #u_name { font-size: clamp(0.7rem, 1.5vw, 0.9rem); font-weight: 600; margin: 0; }
-#u_role { font-size: clamp(0.6rem, 1vw, 0.75rem); color: #94a3b8; margin: 0;}
 
 #id6 {
     height: fit-content;
@@ -131,9 +91,6 @@ button {
     width: clamp(12rem, 17vw, 20rem);
     display: flex;
     align-items: center;
-    background: #211951;
-    border: 1px solid #1e293b;
-    border-radius: 12px;
     padding: clamp(10px, 2vw, 20px);
     margin: clamp(5px, 1vw, 10px);
 }
@@ -149,15 +106,10 @@ button {
     margin-right: 16px;
 }
 
-#icon1 { background: rgba(56, 189, 248, 0.1); color: #38bdf8; }
-#icon2 { background: rgba(168, 85, 247, 0.1); color: #a855f7; }
-#icon3 { background: rgba(99, 102, 241, 0.1); color: #818cf8; }
-#icon4 { background: rgba(239, 68, 68, 0.1); color: #f87171; }
-
 #p002, #p003, #p004, #p005 { 
     color: #94a3b8; 
     font-size: clamp(0.7rem, 1.5vw, 0.85rem); 
-    margin: 0; 
+    margin: 0;
 }
 #h_kpi1, #h_kpi2, #h_kpi3, #h_kpi4 { 
     font-size: clamp(1.2rem, 3vw, 1.8rem); 
@@ -176,10 +128,38 @@ button {
 #box5, #box6 {
     width: clamp(20rem, 45vw, 50rem);
     background: #211951;
-    border: 1px solid #1e293b;
     border-radius: 12px;
     padding: clamp(10px, 2vw, 20px);
     margin: clamp(5px, 1vw, 10px);
+}
+#table3, #table4 {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+}
+
+#table3 th, #table3 td,
+#table4 th, #table4 td {
+    padding: clamp(6px, 1.5vw, 12px) clamp(4px, 1vw, 8px);
+    text-align: left;
+    border-bottom: 1px solid #1e293b;
+}
+
+#table3 th, #table4 th {
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: clamp(0.6rem, 1.5vw, 0.85rem);
+}
+
+#table3 tbody tr:hover,
+#table4 tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+#table3 tbody:empty::after,
+#table4 tbody:empty::after {
+    content: "No data loaded";
+    color: gray;
 }
 
 #id8 {
@@ -194,7 +174,6 @@ button {
 #box7, #box8{
     width: clamp(15rem, 30vw, 30rem);
     background: #211951;
-    border: 1px solid #1e293b;
     border-radius: 12px;
     padding: clamp(10px, 2vw, 20px);
     margin: clamp(5px, 1vw, 10px);
