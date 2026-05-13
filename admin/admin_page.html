@@ -19,41 +19,31 @@
             <div id="id3">
                 <h2 id="heading001">
                     Welcome back, 
-                    <span id="highlight" id="admin_name">Admin!</span> 👋
+                    <span id="highlight" id="admin_name">Admin!</span>
                 </h2>
 
                 <p id="p001">
-                    Here's what's happening in your library today.
+                    Here's what's happening in your library today
                 </p>
             </div>
 
             <div id="id4">
                 <input 
                     type="text" 
-                    placeholder="Search books, members..." 
+                    placeholder="Search books..." 
                     id="search_bar"
                 >
 
-                <button id="notif_btn">🔔</button>
-
                 <div id="id5">
-                    <img 
-                        id="user_img" 
-                        src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff"
-                    >
-
                     <div id="user_text">
                         <p id="u_name">Admin</p>
-                        <p id="u_role">Library Administrator</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- KPI SECTION -->
-
         <div id="id6">
-
             <div id="box1">
                 <div id="icon1">📚</div>
 
@@ -69,7 +59,7 @@
                 <div id="icon2">👥</div>
 
                 <div id="info2">
-                    <p id="p003">Active Members</p>
+                    <p id="p003">Total Members</p>
 
                     <!-- JS WILL UPDATE -->
                     <h3 id="h_kpi2">0</h3>
@@ -117,9 +107,6 @@
                     <thead>
                         <tr>
                             <th>Book Title</th>
-                            <th>Category</th>
-                            <th>Total Stock</th>
-                            <th>Available</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
@@ -146,7 +133,6 @@
                         <tr>
                             <th>Member Name</th>
                             <th>Book Requested</th>
-                            <th>Duration</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -166,10 +152,19 @@
                     <h3 id="h_panel3">Member Management</h3>
                 </div>
 
-                <!-- JS LATER -->
-                <div id="member_container">
+               <table id="table3">
 
-                </div>
+    <thead>
+        <tr>
+            <th>Member Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody id="memberTable"></tbody>
+
+</table>
 
             </div>
 
@@ -181,15 +176,24 @@
                     <h3 id="h_panel4">Fine Management</h3>
                 </div>
 
-                <!-- JS LATER -->
-                <div id="fine_container">
+                <table id="table4">
 
-                </div>
+    <thead>
+        <tr>
+            <th>Member</th>
+            <th>Fine Amount</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody id="fineTable"></tbody>
+
+</table>
 
             </div>
 
         </div>
-
+    
         <div id="id8">
 
         </div>
