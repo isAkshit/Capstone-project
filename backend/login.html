@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication - Minimalist Dark Theme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .auth-container {
+            width: 90%;
+            max-width: 420px;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo i {
+            font-size: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo p {
+            color: #888;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .auth-toggle {
+            display: flex;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 4px;
+        }
+
+        .auth-toggle button {
+            flex: 1;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .auth-toggle button.active {
+            background: rgba(102, 126, 234, 0.2);
+            color: #fff;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            color: #555;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #333;
+        }
+
+        .divider span {
+            padding: 0 15px;
+            font-size: 13px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaa;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group input::placeholder {
+            color: #666;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: #888;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .auth-btn:active {
+            transform: translateY(0);
+        }
+
+        .google-btn {
+            width: 100%;
+            padding: 14px;
+            background: transparent;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .google-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .google-btn i {
+            font-size: 20px;
+        }
+
+        .toggle-link {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .toggle-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-link a:hover {
+            color: #764ba2;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(40, 40, 40, 0.95);
+            color: #fff;
+            padding: 16px 24px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast.success {
+            border-left: 4px solid #4caf50;
+        }
+
+        .toast.error {
+            border-left: 4px solid #f44336;
+        }
+
+        .toast i {
+            font-size: 18px;
+        }
+
+        .toast.success i {
+            color: #4caf50;
+        }
+
+        .toast.error i {
+            color: #f44336;
+        }
+
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .auth-btn.loading .spinner {
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .auth-btn.loading {
+            color: transparent;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .auth-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container" id="authContainer">
+        <div class="logo">
+            <i class="fas fa-circle-user"></i>
+            <h1 id="authTitle">Welcome Back</h1>
+            <p id="authSubtitle">Sign in to continue to your account</p>
+        </div>
+
+        <div class="auth-toggle">
+            <button id="signInToggle" class="active" onclick="toggleAuthMode('signin')">Sign In</button>
+            <button id="signUpToggle" onclick="toggleAuthMode('signup')">Sign Up</button>
+        </div>
+
+        <form id="authForm" onsubmit="handleAuth(event)">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="you@example.com" 
+                    required
+                    autocomplete="email"
+                >
+            </div>
+
+            <div class="form-group" id="nameGroup" style="display: none;">
+                <label for="name">Full Name</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    placeholder="John Doe" 
+                    required
+                    autocomplete="name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="••••••••" 
+                        required
+                        autocomplete="current-password"
+                    >
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+            </div>
+
+            <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="password-wrapper">
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        placeholder="••••••••" 
+                        required
+                        autocomplete="new-password"
+                    >
+                    <i class="fas fa-eye password-toggle" onclick="toggleConfirmPassword()"></i>
+                </div>
+            </div>
+
+            <button type="submit" class="auth-btn" id="authBtn">
+                <span class="spinner"></span>
+                <span class="btn-text">Sign In</span>
+            </button>
+        </form>
+
+        <div class="divider">
+            <span>or continue with</span>
+        </div>
+
+        <button class="google-btn" onclick="handleGoogleAuth()">
+            <i class="fab fa-google"></i>
+            <span>Continue with Google</span>
+        </button>
+
+        <div class="toggle-link">
+            <span id="toggleText">Don't have an account?</span>
+            <a href="#" id="toggleLink" onclick="toggleAuthMode('signup')">Sign up</a>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Firebase module for auth (email + google) -->
+    <script type="module" src="./regiter.js" defer></script>
+
+    <script>
+
+        let currentAuthMode = 'signin';
+        let googleAuth = null;
+
+        // Initialize Google OAuth
+        function initializeGoogleAuth() {
+            googleAuth = google.accounts.oauth2.initTokenClient({
+                client_id: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com', // Replace with your actual client ID
+                scope: 'openid email profile',
+                callback: (tokenResponse) => {
+                    if (tokenResponse && tokenResponse.access_token) {
+                        handleGoogleSuccess(tokenResponse);
+                    }
+                },
+                error_callback: (error) => {
+                    showToast('Google authentication failed. Please try again.', 'error');
+                    console.error('Google auth error:', error);
+                }
+            });
+        }
+
+        // Toggle between sign in and sign up
+        function toggleAuthMode(mode) {
+            currentAuthMode = mode;
+            const signInToggle = document.getElementById('signInToggle');
+            const signUpToggle = document.getElementById('signUpToggle');
+            const authTitle = document.getElementById('authTitle');
+            const authSubtitle = document.getElementById('authSubtitle');
+            const authBtn = document.getElementById('authBtn');
+            const btnText = authBtn.querySelector('.btn-text');
+            const nameGroup = document.getElementById('nameGroup');
+            const confirmPasswordGroup = document.getElementById('confirmPasswordGroup');
+            const toggleText = document.getElementById('toggleText');
+            const toggleLink = document.getElementById('toggleLink');
+
+            if (mode === 'signin') {
+                signInToggle.classList.add('active');
+                signUpToggle.classList.remove('active');
+                authTitle.textContent = 'Welcome Back';
+                authSubtitle.textContent = 'Sign in to continue to your account';
+                btnText.textContent = 'Sign In';
+                nameGroup.style.display = 'none';
+                confirmPasswordGroup.style.display = 'none';
+                toggleText.textContent = "Don't have an account?";
+                toggleLink.textContent = 'Sign up';
+                toggleLink.onclick = () => toggleAuthMode('signup');
+            } else {
+                signUpToggle.classList.add('active');
+                signInToggle.classList.remove('active');
+                authTitle.textContent = 'Create Account';
+                authSubtitle.textContent = 'Join us today and get started';
+                btnText.textContent = 'Sign Up';
+                nameGroup.style.display = 'block';
+                confirmPasswordGroup.style.display = 'block';
+                toggleText.textContent = 'Already have an account?';
+                toggleLink.textContent = 'Sign in';
+                toggleLink.onclick = () => toggleAuthMode('signin');
+            }
+
+            // Clear form
+            document.getElementById('authForm').reset();
+        }
+
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.password-toggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Toggle confirm password visibility
+        function toggleConfirmPassword() {
+            const passwordInput = document.getElementById('confirmPassword');
+            const toggleIcon = document.querySelectorAll('.password-toggle')[1];
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const icon = toast.querySelector('i');
+            
+            // Update toast content
+            toastMessage.textContent = message;
+            toast.className = `toast ${type}`;
+            
+            // Update icon based on type
+            if (type === 'success') {
+                icon.className = 'fas fa-check-circle';
+            } else if (type === 'error') {
+                icon.className = 'fas fa-exclamation-circle';
+            }
+            
+            // Show toast
+            toast.classList.add('show');
+            
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Handle Google authentication (Firebase OAuth via regiter.js)
+        function handleGoogleAuth() {
+            if (typeof window.handleGoogleLogin === 'function') {
+                window.handleGoogleLogin();
+                return;
+            }
+            showToast('Google sign-in is not wired yet.', 'error');
+        }
+
+        // Handle Google auth success
+        function handleGoogleSuccess(user) {
+            if (currentAuthMode === 'signup') {
+                showToast(`Welcome ${user.name}! Account created successfully.`, 'success');
+            } else {
+                showToast(`Welcome back, ${user.name}!`, 'success');
+            }
+            
+            // Store user data in localStorage for demo
+            localStorage.setItem('user', JSON.stringify(user));
+            
+            // In a real app, redirect to dashboard
+            setTimeout(() => {
+                showToast('Redirecting to dashboard...', 'success');
+            }, 1500);
+        }
+
+        // Handle email authentication
+        function handleAuth(event) {
+            event.preventDefault();
+            
+            const authBtn = document.getElementById('authBtn');
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Add loading state
+            authBtn.classList.add('loading');
+            authBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                if (currentAuthMode === 'signin') {
+                    // Demo credentials
+                    if (email === 'demo@example.com' && password === 'password') {
+                        const user = {
+                            name: 'Demo User',
+                            email: email
+                        };
+                        localStorage.setItem('user', JSON.stringify(user));
+                        showToast('Login successful! Redirecting...', 'success');
+                    } else {
+                        showToast('Invalid email or password', 'error');
+                    }
+                } else {
+                    // Sign up logic
+                    const name = document.getElementById('name').value;
+                    const confirmPassword = document.getElementById('confirmPassword').value;
+                    
+                    if (password !== confirmPassword) {
+                        showToast('Passwords do not match', 'error');
+                    } else {
+                        const user = {
+                            name: name,
+                            email: email
+                        };
+                        localStorage.setItem('user', JSON.stringify(user));
+                        showToast('Account created successfully! Welcome!', 'success');
+                    }
+                }
+                
+                // Remove loading state
+                authBtn.classList.remove('loading');
+                authBtn.disabled = false;
+            }, 1500);
+        }
+
+        // Check if user is already logged in
+        window.addEventListener('load', () => {
+            const user = localStorage.getItem('user');
+            if (user) {
+                const userData = JSON.parse(user);
+                showToast(`Welcome back, ${userData.name}!`, 'success');
+            }
+        });
+
+        // Add input animations
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
