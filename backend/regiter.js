@@ -31,7 +31,7 @@ window.handleGoogleLogin = async () => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
     // You can store / read result.user here
-    window.location.href = "index.html";
+    window.location.href = "homepage/index.html";
   } catch (err) {
     console.error("Google sign-in failed:", err);
     alert(err?.message || "Google sign-in failed");
@@ -57,7 +57,7 @@ if (submit) {
 
       const user = userCredential.user;
 
-      window.location.href = "index.html";
+      window.location.href = "homepage/index.html";
 
     } catch (error) {
 
