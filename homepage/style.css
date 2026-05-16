@@ -4,7 +4,6 @@ body{
     background-color: #000; 
 }
 
-
 #nav{
     height: clamp(3rem,3.25vw,4rem);
     width:100%;
@@ -64,8 +63,6 @@ body{
         0 0 50px #00d4ff;
 }
 
-/* DROPDOWN */
-
 .dropdown{
     display: none;
 
@@ -78,7 +75,6 @@ body{
     background-color: #211951;
 
     border-radius: 10px;
-
 
     z-index: 100;
 }
@@ -103,8 +99,6 @@ body{
 
     border-radius: 5px;
 }
-
-/* SHOW DROPDOWN ON HOVER */
 
 .nav-item:hover .dropdown{
     display: block;
@@ -246,7 +240,6 @@ body{
 #st_journey{
     color: white;
 }
-
 
 #st_journey::after,#st_journey::before{
     height:100%;
@@ -416,7 +409,6 @@ body{
     background-image: linear-gradient(to top, transparent, #282197ab);
 }
 
-
 #id10{
     height: fit-content;
     border-radius: 10px;
@@ -487,7 +479,6 @@ body{
     border-radius: 20px;
     background-color: #282197ab;
 }
-
 
 .main-footer {
     background-color: #0c0e1a; 
