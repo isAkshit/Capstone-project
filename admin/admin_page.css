@@ -65,7 +65,6 @@ button {
     margin-right: clamp(5px, 1vw, 16px);
 }
 
-
 #id5 { 
     display: flex;
     align-items: center;
@@ -73,7 +72,6 @@ button {
     padding: 6px 16px 6px 6px;
     border-radius: 20px;
 }
-
 
 #u_name { font-size: clamp(0.7rem, 1.5vw, 0.9rem); font-weight: 600; margin: 0; }
 
@@ -216,6 +214,7 @@ button {
 button {
     transition: all 0.2s ease;
 }
+
 #member_container,#fine_container{
     min-height: 120px;
 }
@@ -223,4 +222,138 @@ button {
 tbody:empty::after{
     content: "No data loaded";
     color: gray;
+}
+
+#addGoogleBookBtn {
+    margin-left: 12px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #06b6d4;
+    color: #00111a;
+    font-weight: 600;
+}
+
+#addGoogleBookBtn:hover {
+    background: #22d3ee;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#googleBookPanel {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid #334155;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 14px;
+}
+
+.google-panel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.google-panel-top h4 {
+    color: #38bdf8;
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+}
+
+.google-panel-top p,
+.empty-search-text {
+    color: #94a3b8;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+#closeGooglePanel {
+    background: #334155;
+    color: #e2e8f0;
+    border-radius: 6px;
+    padding: 7px 10px;
+}
+
+.google-book-results {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 330px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.google-book-card {
+    display: grid;
+    grid-template-columns: 54px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.google-book-card img {
+    width: 54px;
+    height: 78px;
+    object-fit: cover;
+    border-radius: 5px;
+    background: #020617;
+}
+
+.book-cover-fallback {
+    background:
+        linear-gradient(135deg, #0f172a, #1e293b) !important;
+    border: 1px solid #334155;
+}
+
+.google-book-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.google-book-info b {
+    color: #e2e8f0;
+    font-size: 0.92rem;
+    overflow-wrap: anywhere;
+}
+
+.google-book-info span,
+.google-book-info small {
+    color: #94a3b8;
+    overflow-wrap: anywhere;
+}
+
+.add-result-btn {
+    background: #16a34a;
+    color: white;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: 700;
+}
+
+.add-result-btn:hover {
+    background: #22c55e;
+}
+
+.add-result-btn:disabled {
+    background: #64748b;
+    cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+    .google-book-card {
+        grid-template-columns: 46px 1fr;
+    }
+
+    .add-result-btn {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
 }
