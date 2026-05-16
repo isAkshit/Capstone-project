@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #030712; /* Dark background */
-    color: #ffffff; /* White text */
+    background-color: #030712;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,14 +16,13 @@ body {
 }
 
 .auth-wrapper {
-    background-color: #000000; /* Pure black container */
+    background-color: #000000;
     width: 100%;
     max-width: 480px;
     padding: 40px 30px;
     border-radius: 12px;
 }
 
-/* Header Section */
 .header-section {
     text-align: center;
     margin-bottom: 30px;
@@ -35,7 +34,7 @@ body {
 }
 
 .cyan-text {
-    color: #00e5ff; /* Direct Cyan Color */
+    color: #00e5ff;
 }
 
 .header-section h1 {
@@ -45,11 +44,10 @@ body {
 }
 
 .header-section p {
-    color: #9ca3af; /* Muted gray text */
+    color: #9ca3af;
     font-size: 14px;
 }
 
-/* Role Selection Cards */
 .role-selection {
     margin-bottom: 25px;
 }
@@ -80,8 +78,8 @@ body {
 }
 
 .role-card.active {
-    border-color: #00e5ff; /* Neon Cyan Border */
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.15); /* Soft cyan glow */
+    border-color: #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
 }
 
 .role-card .icon {
@@ -99,7 +97,6 @@ body {
     color: #9ca3af;
 }
 
-/* Promo Box (The "New to CircuLib" card) */
 .promo-card {
     background-color: #04101a;
     border: 1px solid #0d2838;
@@ -135,7 +132,6 @@ body {
     background: rgba(0, 229, 255, 0.1);
 }
 
-/* "Already a user?" Divider */
 .divider {
     display: flex;
     align-items: center;
@@ -156,7 +152,6 @@ body {
     padding: 0 15px;
 }
 
-/* Form Inputs */
 .input-group {
     margin-bottom: 20px;
 }
@@ -182,10 +177,9 @@ body {
 }
 
 .input-group input:focus {
-    border-color: #00e5ff; /* Highlight input on click */
+    border-color: #00e5ff;
 }
 
-/* Links & Buttons */
 .form-footer {
     display: flex;
     justify-content: flex-end;
@@ -200,7 +194,7 @@ body {
 
 .primary-btn {
     width: 100%;
-    background-color: #00e5ff; /* Solid Cyan button */
+    background-color: #00e5ff; 
     color: #000000;
     border: none;
     padding: 14px;
@@ -215,7 +209,6 @@ body {
     background-color: #00d4eb;
 }
 
-/* Hide/Show Logic */
 .hidden {
     display: none !important;
 }
