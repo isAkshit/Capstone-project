@@ -44,16 +44,71 @@ body{
     font-size: clamp(10px,2vw,24px);
     color:aliceblue;
 }
-#item1:hover,#item2:hover,#item3:hover,#item4:hover{
+.nav-item{
+    position: relative;
+}
+
+.nav-link{
+    color: aliceblue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-link:hover{
     color:rgb(0, 255, 251);
+
     text-shadow: 
         0 0 10px #fff,
         0 0 20px #8a2cff,
         0 0 30px #8a2cff,
         0 0 50px #00d4ff;
-
 }
 
+/* DROPDOWN */
+
+.dropdown{
+    display: none;
+
+    position: absolute;
+    top: 35px;
+    left: -20px;
+
+    min-width: 180px;
+
+    background-color: #211951;
+
+    border-radius: 10px;
+
+
+    z-index: 100;
+}
+
+.dropdown a,
+.dropdown p{
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 8px;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+.dropdown a:hover{
+    background-color: #342a7a;
+
+    border-radius: 5px;
+}
+
+/* SHOW DROPDOWN ON HOVER */
+
+.nav-item:hover .dropdown{
+    display: block;
+}
 #main_div_img{
     height: clamp(22rem,80vw,60rem);
     left:0px;
@@ -95,7 +150,7 @@ body{
     text-align: center;
 }
 #main_h2{
-    font-family:cursive;
+    font-family: 'Trebuchet MS', sans-serif;
     font-size: clamp(0.60rem,2vw,2rem);
     height:fit-content;
     text-align: center;
@@ -104,7 +159,7 @@ body{
     color:aqua;
 }
 #main_h3{
-    font-family:cursive;
+    font-family: 'Trebuchet MS', sans-serif;
     font-size: clamp(0.60rem,2vw,2rem);
     height:20px;
     color: rgb(108, 235, 255);
@@ -172,7 +227,7 @@ body{
    justify-content: center;
    align-items: center;
 }
-#st_journey,#testimonies{
+#st_journey{
     border-radius: clamp(10px,2vh,25px);
     height:clamp(1.5rem,5vh,5rem);
     width:clamp(5rem,12vw,15rem);
@@ -190,14 +245,10 @@ body{
 }
 #st_journey{
     color: white;
-    margin-right: clamp(5px,5vw,100px);
-}
-#testimonies{
-    color: white;
-    margin-left: clamp(5px,5vw,100px);
 }
 
-#st_journey::after,#st_journey::before,#testimonies::after , #testimonies::before{
+
+#st_journey::after,#st_journey::before{
     height:100%;
     width:100%;
     top: 50%;
@@ -210,10 +261,10 @@ body{
     border-radius: 5px;
     z-index: -1;
 }
-#st_journey::before, #testimonies::before{
+#st_journey::before{
     filter:blur(1.2rem);
 }
-#st_journey:hover,#testimonies:hover{
+#st_journey:hover{
     color:white;
     z-index: 1;
     box-shadow: 30px 0 100px cyan, -30px 0 100px cyan;
@@ -364,8 +415,6 @@ body{
     margin: 0px 20px 20px 10px;
     background-image: linear-gradient(to top, transparent, #282197ab);
 }
-
-
 
 
 #id10{
