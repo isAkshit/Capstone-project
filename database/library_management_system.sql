@@ -28,10 +28,10 @@ ALTER TABLE members
 ADD COLUMN email VARCHAR(100) UNIQUE,
 ADD COLUMN password VARCHAR(100),
 ADD COLUMN role ENUM('student','admin')
-DEFAULT 'STUDENT',
+DEFAULT 'student',
 ADD COLUMN joined_at DATE;
 
-CREATE TABLE libraries ( librarry_id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE libraries ( library_id INT AUTO_INCREMENT PRIMARY KEY,
 library_name VARCHAR(100) NOT NULL,
 admin_id INT,
 FOREIGN KEY (admin_id) REFERENCES members(member_id)
