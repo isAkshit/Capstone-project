@@ -338,6 +338,31 @@ tbody:empty::after{
     font-weight: 700;
 }
 
+.google-book-actions {
+    display: grid;
+    grid-template-columns: 68px 72px;
+    gap: 8px;
+    align-items: center;
+}
+
+.book-copy-input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    background: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-weight: 700;
+    padding: 8px 6px;
+    text-align: center;
+}
+
+.book-copy-input:disabled {
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
 .add-result-btn:hover {
     background: #22c55e;
 }
@@ -353,7 +378,11 @@ tbody:empty::after{
     }
 
     .add-result-btn {
-        grid-column: 1 / -1;
         width: 100%;
+    }
+
+    .google-book-actions {
+        grid-column: 1 / -1;
+        grid-template-columns: minmax(68px, 0.35fr) 1fr;
     }
 }
