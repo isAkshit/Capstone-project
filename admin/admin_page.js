@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     googlePanel.innerHTML = `
         <div class="google-panel-top">
             <div>
-                <h4>Google Books Search</h4>
+                <h4>Book Search</h4>
                 <p>Search by title, author, or topic and add the best match to your library.</p>
             </div>
             <button type="button" id="closeGooglePanel">Close</button>
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function activateGoogleSearch() {
         googlePanel.classList.remove("hidden");
-        searchBar.placeholder = "Search Google Books to add...";
+        searchBar.placeholder = "Search books to add...";
         searchBar.focus();
         searchGoogleBooks(searchBar.value.trim());
     }
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderGoogleBooks(books) {
         if (!books.length) {
-            googleResults.innerHTML = `<p class="empty-search-text">No Google Books result found.</p>`;
+            googleResults.innerHTML = `<p class="empty-search-text">No book results found.</p>`;
             return;
         }
 
@@ -190,16 +190,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span>${escapeHtml(book.author || "Unknown author")}</span>
                     <small>${escapeHtml(book.category || "General")}</small>
                 </div>
-                <button
-                    type="button"
-                    class="add-result-btn"
-                    data-title="${escapeHtml(book.title)}"
-                    data-author="${escapeHtml(book.author || "")}"
-                    data-category="${escapeHtml(book.category || "General")}"
-                    data-cover="${escapeHtml(book.cover_url || "")}"
-                >
-                    Add
-                </button>
+                <div class="google-book-actions">
+                    <input
+                        type="number"
+                        class="book-copy-input"
+                        min="1"
+                        max="999"
+                        value="1"
+                        aria-label="Copies to add"
+                    >
+                    <button
+                        type="button"
+                        class="add-result-btn"
+                        data-title="${escapeHtml(book.title)}"
+                        data-author="${escapeHtml(book.author || "")}"
+                        data-category="${escapeHtml(book.category || "General")}"
+                        data-cover="${escapeHtml(book.cover_url || "")}"
+                    >
+                        + Add
+                    </button>
+                </div>
             `;
             googleResults.appendChild(item);
         });
@@ -223,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        googleResults.innerHTML = `<p class="empty-search-text">Searching Google Books...</p>`;
+        googleResults.innerHTML = `<p class="empty-search-text">Searching books...</p>`;
 
         try {
             const data = await fetchJson(`/api/google-books?q=${encodeURIComponent(query)}`);
@@ -270,6 +280,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const button = event.target.closest(".add-result-btn");
         if (!button) return;
 
+        const card = button.closest(".google-book-card");
+        const copyInput = card.querySelector(".book-copy-input");
+        const copies = Math.max(1, Math.min(Number.parseInt(copyInput.value, 10) || 1, 999));
+
+        copyInput.value = copies;
+        copyInput.disabled = true;
         button.disabled = true;
         button.textContent = "Adding...";
 
@@ -281,8 +297,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     author: button.dataset.author,
                     category: button.dataset.category,
                     cover_url: button.dataset.cover,
-                    available_copies: 1,
-                    total_stock: 1,
+                    available_copies: copies,
+                    total_stock: copies,
                     mode: "offline"
                 })
             });
@@ -290,8 +306,9 @@ document.addEventListener("DOMContentLoaded", () => {
             button.textContent = "Added";
             await loadDashboard();
         } catch (error) {
+            copyInput.disabled = false;
             button.disabled = false;
-            button.textContent = "Add";
+            button.textContent = "+ Add";
             alert(error.message);
         }
     });
@@ -326,4 +343,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadDashboard();
 });
-
